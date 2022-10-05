@@ -1,0 +1,472 @@
+:root {
+    --blue-accent: rgb(80, 80, 255);
+    --dark-blue: rgb(34, 34, 58);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    line-height: 1.6;
+    background: rgb(228, 228, 228);
+    font-family: 'Chakra Petch', sans-serif;
+    overflow-x: hidden;
+    min-height: 100%;
+    
+}
+
+/* HEADER */
+#header {
+    display: flex;
+    position: fixed;
+    padding: 5px;
+    top: 0;
+    width: 100%;
+    background: white;
+    z-index: 99;
+}
+
+/* LOGO */
+.logo {
+    width: 90px;
+    padding: 5px;
+}
+
+#header-img {
+    width: 100%;
+}
+
+/* NAV MENU */
+#nav-bar {
+    display: flex;
+    flex-grow: 1;
+    padding: 0;
+    align-items: center;
+}
+
+@media only screen and (max-width: 680px) {
+    #nav-bar {
+        display: none;
+    }
+} 
+
+ul {
+    display: flex;
+    flex-grow: 1;
+    list-style: none;
+    padding: 0 5% 0 0;
+    margin: 0;
+    justify-content: flex-end;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.nav-link {
+    padding: 12px;
+}
+
+/* INTRO IMAGE AND DESC */
+#intro {  
+    background: linear-gradient(#eeecec33,rgba(126, 103, 121, 0.51)), url(https://i.redd.it/swibiheiz1t51.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 600px;
+    margin-top: 70px;
+    color: white;
+}
+
+#intro h2 {
+    font-weight: 300;
+}
+
+#intro-text {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    box-shadow: 0 30px 40px rgba(0,0,0,0.9);
+}
+
+#intro-link {
+    left: 75%;
+}
+
+
+/* WHITE/BLUE STYLED BUTTON */
+.button {
+    position: relative;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 17px;
+    border-radius: 20px;
+}
+
+.button-white {
+    background-color: white;
+    color: black;
+}
+
+.button-blue {
+    background-color: var(--blue-accent);
+    color: white;
+}
+
+/* border around the button */
+.button:hover::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 20px;     
+}
+
+.button-white:hover::before {
+    border: 2px solid white; 
+}
+
+.button-blue:hover::before {
+    border: 2px solid var(--blue-accent); 
+}
+
+/* in order to center an img we have to display it as block */
+
+/* so that the navbar doesnt cover the content we add a scroll margin-top */
+.scroll {
+    margin: 30px 0;
+    scroll-margin-top: 100px;
+}
+
+/* FEATURED GALLERY */
+
+#gallery-cont {
+    position: relative;
+    display: flex;
+    margin: auto;
+    width: 50%;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+.gallery {
+    position: relative;
+    cursor: pointer;
+    width: 30%;
+}
+
+.gallery-link {
+    position: relative;
+    z-index: 10;
+}
+
+.gallery-img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.gallery-img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 30px 40px rgba(0,0,0,0.9);
+}
+
+/* hides the details before clicked */
+.details {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    display: none;
+    padding: 10px;
+}
+
+.details:target {
+    display: block;
+    margin-top: 30px;
+    scroll-margin-top: 200px;
+}
+
+.desc-text {
+    width: 40%;
+    height: 70%;
+}
+
+#genshin-impact {
+    background: url(https://i.ibb.co/RSnGHhc/wallpaperflare-cropped.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#genshin-text {
+    margin-left: 10%;
+}
+
+#genshin-text a {
+    left: 70%;
+}
+
+#persona5 {
+    margin-top: 30px;
+    min-height: 400px;
+    background: url(https://i.ibb.co/2Wrv71J/wallpaperflare-cropped-5.jpg);
+    background-size: cover;
+} 
+
+#persona-text {
+    color: white;
+    margin-left: 55%;
+    text-align: right;
+}
+
+#persona-text a {
+    left: -50%;
+}
+
+#final-fantasy-xv {
+    margin-top: 30px;
+    min-height: 400px;
+    background: url(https://i.ibb.co/2PN8py5/wallpaperflare-cropped-6.jpg);
+    background-size: cover;
+    /*linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://i.ibb.co/tKfd86p/wallpaperflare-cropped-3.jpg); */
+
+}
+
+#ff-text {
+    color: white;
+    text-align: right;
+    margin-left: 60%;
+}
+
+#ff-text a {
+    left: -35%;
+}
+
+/* ABOUT */
+#about {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://i.ibb.co/ZVbdQXn/wallpaperflare-cropped-8.jpg);
+    padding: 10px;
+    color: white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 0px;
+}
+
+#about p {
+    margin: 0px 20px;
+    padding: 30px;
+}
+
+#about iframe {
+    display: block;
+    width: 600px;
+    margin: auto;
+    margin-bottom: 20px;
+    border: 3px solid white;
+    border-style: ridge;
+}
+
+/* PRODUCTS */
+#products {
+    margin: 80px 20px 130px 20px;
+    text-align: center;
+}
+
+#products > p {
+    font-size: 21px;
+    margin-top: 0;
+    color: rgb(85, 85, 85);
+}
+
+#products h1{
+    color: var(--blue-accent);
+}
+
+#product-cont {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.product-elements {
+    min-height: 300px;
+    width: 300px;
+    border-radius: 30%;
+    margin: 35px;
+    cursor: pointer;
+}
+
+.product-img {
+    position: relative;
+    width: 100%;
+    height: 70%;
+}
+
+.product-desc {
+    color: rgb(85, 85, 85);
+    font-size: 18px;
+}
+
+.product-img img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/* CONTACT FOOTER */
+#contact {
+    margin: 30px 0 0 0;
+    background-color: var(--dark-blue);
+    min-height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#socials {
+    flex: 1 0 10%;
+    padding: 10px;
+    margin-top:  50px;
+}
+
+#socials > img {
+    display: block;
+    width: 100px;
+    margin: auto;
+}
+
+#socials-cont {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 20px;
+    font-size: 30px;
+}
+
+.fa {
+    text-decoration: none;
+    color: white;
+}
+
+.fa:hover {
+    transform: scale(1.1);
+}
+
+#newsletter {
+    margin: auto;
+    margin-top: 35px;
+    padding: 10px 30px 30px 30px;
+    flex: 1 0 30%;
+    color: white;
+}
+
+#newsletter h2 {
+    font-weight: 300;
+}
+
+/* margin auto works on block elements when u give them width */
+#sub-form {
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+
+#sub-form input {
+    flex: 1 0 80%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgba(256, 256, 256, 0.1);
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 5px 0 0 5px;
+    color: white;
+}
+
+input:focus::placeholder {
+    opacity: 0;
+}
+
+#sub-form button {
+    flex: 1 0 20%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgba(256, 256, 256, 0.1);
+    border: 1px solid rgb(228, 228, 228);
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    color: white;
+}
+
+#sub-form button:hover {
+    background-color: var(--dark-blue);
+}
+
+#contact-cont {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    gap: 20px;
+    flex: 0 0 30%;
+    color: white;
+    margin-right: 35px;
+    margin-top: 30px;
+}
+
+.contact-links {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    gap: 0; 
+    line-height: 1.4;
+}
+
+.contact-links a{
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
+}
+
+/* SIGN IN MODAL */
+
+#overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+#form {
+    position: fixed;
+    top: 50%;
+    left: 40%;
+    background-color: aliceblue;
+}
+
+#overlay:target {
+    display: block;
+}
+
